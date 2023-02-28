@@ -143,3 +143,15 @@
 ### 참조사이트
 > [JPA에서 Reader DB 사용하기 (feat. AWS Aurora)](https://jojoldu.tistory.com/515)  
 > [[입 개발] MariaDB Connector 와 AWS Aurora](https://charsyam.wordpress.com/2021/12/11/%EC%9E%85-%EA%B0%9C%EB%B0%9C-mariadb-connector-%EC%99%80-aws-aurora/)  
+
+---
+
+## aws-cli
+### cluster
+> 조회: `aws rds describe-db-clusters`  
+
+### instance
+> 조회: `aws rds describe-db-instances`  
+
+### snapshot
+> 조회: `aws rds describe-db-snapshots`
