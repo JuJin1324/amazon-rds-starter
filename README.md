@@ -124,5 +124,22 @@
 ---
 
 ## Web Application - SpringBoot
-### Write 와 Read 인스턴스 함께 사용하기
+### Writer / Reader 인스턴스 부하 분산
+> `@Transactional(readOnly=true)` 인 서비스 메서드 관하여 Reader 인스턴스를 호출하도록 한다.  
 > 
+> 조건
+> 1.JDBC Driver 로 AWS JDBC Driver for MySQL 을 사용한다.
+> 
+> 2.application.yml 에 Datasource 연결 시 url 에 `jdbc:mysql:aws://<클러스터 엔드포인트 주소>` 를 입력한다.  
+> 주소는 라이터 인스턴스의 주소가 아닌 리전 클러스터의 엔드포인트 중에서 유형이 라이터 인스턴스인 엔드포인트 주소를 입력한다.
+>
+> 동작 원리  
+> AWS JDBC Driver for MySQL 의 db connection 에서 Datasource url 에 aws 가 붙어있으면 reader 인스턴스의 주소와 writer 인스턴스의 주소를 
+> 필요에 맞게 얻어와서 사용한다. 
+> 
+> AWS JDBC Driver for MySQL 의 db connection 이 알아서 동작하기 때문에 application.yml 에서 Datasource url 로 reader 및 writer 
+> 주소를 각각 입력하고 reader Datasource 와 writer Datasource 를 각각 만드는 수고로움이 필요없다.  
+
+### 참조사이트
+> [JPA에서 Reader DB 사용하기 (feat. AWS Aurora)](https://jojoldu.tistory.com/515)  
+> [[입 개발] MariaDB Connector 와 AWS Aurora](https://charsyam.wordpress.com/2021/12/11/%EC%9E%85-%EA%B0%9C%EB%B0%9C-mariadb-connector-%EC%99%80-aws-aurora/)  
