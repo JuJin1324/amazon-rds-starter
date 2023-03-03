@@ -98,6 +98,15 @@
 ### Failover
 > Aurora 에서는 Primary instance 에 crash 가 발생하여 비정상 종료되면 Aurora Replicas 중 하나를 자동으로 Primary instance 로 승격시킨다.  
 > Aurora 에서는 Aurora Replicas 에서 Primary instance 로 승격시키는 동안의 데이터 유실(data loss)이 없다.  
+> 
+> RDS 콘솔 창에서 Primary instance 선택 후 작업에서 장애 조치(Failover) 항목을 클릭해서 수동으로 장애조치를 할 수 있다.  
+> 해당 장애 조치는 기존 Primary instance 를 Aurora Replicas 로 내리고, Aurora Replicas 의 인스턴스를 Primary instance 로 승격시키는 작업이다.  
+> 그렇기 때문에 싱글 인스턴스를 운영하는 경우에는 사용할 수 없다.  
+> 
+> 싱글 인스턴스인 경우 장애조치  
+> 일반적으로 Failover 자동 처리를 위해서는 최소 Primary instance 1개와 Aurora Replicas 인스턴스 1개를 운영하는 것이 좋다. 
+> 하지만 부득이하게 싱글 인스턴스를 사용하는 경우에는 자동 Failover 가 없음으로 RDS 콘솔에서 Primary instance 를 선택 후 작업에서 재부팅을 통해서 
+> 장애 조치를 진행한다.
 
 ### Aurora Replica 추가
 > RDS 콘솔에서 Aurora DB 클러스터를 선택한 후에 작업에서 `읽기 추가` 버튼을 클릭하여 Aurora Replica 를 추가할 수 있다.  
