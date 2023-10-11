@@ -133,7 +133,7 @@
 
 ---
 
-## Web Application - SpringBoot
+## Web Application - JDBC
 ### Writer / Reader 인스턴스 부하 분산
 > `@Transactional(readOnly=true)` 인 서비스 메서드 관하여 Reader 인스턴스를 호출하도록 한다.  
 > 
