@@ -82,7 +82,7 @@
 > RDS 의 DB 는 클러스터로 구성하며, 클러스터는 2개 타입의 인스턴스로 구성된다.  
 > 첫번째는 Primary instance 이며, 두번째는 Aurora Replica 이다.   
 > Primary instance: 읽기와 쓰기가 모두 가능한 인스턴스 이며 클러스터에서는 하나의 primary instance 만 갖는다.    
-> Aurora Replica: 쓰기만 가능한 인스턴스. 하나의 Aurora DB Cluster 에는 최대 15개의 Aurora Replica 와 1개의 Primary instance 를 지원한다.
+> Aurora Replica: 읽기만 가능한 인스턴스. 하나의 Aurora DB Cluster 에는 최대 15개의 Aurora Replica 와 1개의 Primary instance 를 지원한다.
 
 ### 고가용성
 > Aurora DB 는 다음 3가지를 통해서 고가용성을 유지한다.
